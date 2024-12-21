@@ -1,0 +1,11 @@
+{
+  "homepage": "https://games.kcsquid.xyz/connect4",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    ...
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}

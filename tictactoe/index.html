@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Unbeatable TicTacToe</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h1 id="turn">Turn</h1>
+    <div class="container">
+      <div class="row">
+        <button value="0" onclick="handleClick(this.value)"></button>
+        <button value="1" onclick="handleClick(this.value)"></button>
+        <button value="2" onclick="handleClick(this.value)"></button>
+      </div>
+
+      <div class="row">
+        <button value="3" onclick="handleClick(this.value)"></button>
+        <button value="4" onclick="handleClick(this.value)"></button>
+        <button value="5" onclick="handleClick(this.value)"></button>
+      </div>
+
+      <div class="row">
+        <button value="6" onclick="handleClick(this.value)"></button>
+        <button value="7" onclick="handleClick(this.value)"></button>
+        <button value="8" onclick="handleClick(this.value)"></button>
+      </div>
+    </div>
+
+    <h1 id="status"></h1>
+    <button id="setUp" onclick="setUp()">
+      <i class="fa-solid fa-rotate-right"></i>
+    </button>
+    <button id="settings" onclick="toggleSettings()">
+      <i class="fa-solid fa-gear"></i>
+    </button>
+
+    <div class="settingsMenu">
+      <div class="setting">
+        <h2>Player Piece</h2>
+        <label>Which piece the player should use</label>
+        <br /><br />
+        <label>
+          <input type="radio" id="playerPieceX" name="player_piece" value="X"/>
+          X
+        </label>
+        <br />
+        <label>
+          <input type="radio" id="playerPieceO" name="player_piece" value="O" />
+          O
+        </label>
+      </div>
+      <button id="closeSettings" class="close-btn" onclick="toggleSettings()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </body>
+</html>
