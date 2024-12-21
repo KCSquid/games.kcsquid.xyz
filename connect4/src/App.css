@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+* {
+  --background: #1e1b4b;
+  --strong-color: #e2e8f0;
+  --weak-color: #94a3b8;
+  --light-purple: #818cf8;
+  --dark-purple: #3730a3;
+  --bubble-odd: #2563eb;
+  --bubble-even: #9333ea;
+  --blue: #2c64dd;
+  --red: #b12d2d;
+  --green: #16a85f;
+  --bubble-odd-transparent: rgba(37, 99, 235, 0.6);
+  --bubble-even-transparent: rgba(147, 51, 234, 0.6);
+  --pretty: #60a5fa;
+  --pretty-alt: #a78bfa;
+  --icon-color: #d2d7df;
+  --gap: 2.2vmin;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, var(--bubble-odd), var(--bubble-even));
+}
+
+.board {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 80%;
+  background-color: var(--dark-purple);
+  border-radius: 55px 55px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 32px 32px;
+  justify-content: space-evenly;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.circle {
+  flex-basis: 10vmin;
+  aspect-ratio: 1;
+  background-color: var(--background);
+  border-radius: 1000px;
+  transition: 0.5s ease;
+  outline: none;
+}
+
+.circle:not([data-filled]):hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.circle:not([data-filled]):active,
+.circle:not([data-filled]):hover:active {
+  filter: brightness(1.5);
+  transform: scale(0.95);
+}
+
+.circle[data-blue] {
+  background-color: var(--blue);
+}
+
+.circle[data-red] {
+  background-color: var(--red);
+}
+
+.circle[data-green] {
+  transition: none;
+  background-color: var(--green) !important;
+}
+
+.circle[data-lastMove] {
+  filter: contrast(1.5);
+  box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.664);
+}
+
+#status {
+  position: absolute;
+  left: calc(12.5% - 32px);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  color: var(--strong-color);
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+}
+
+.controls {
+  color: var(--strong-color);
+  font-size: 38px;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+  position: absolute;
+  right: calc(12.5% - 32px);
+  top: 50%;
+  transform: translate(50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.controls input {
+  width: 25%;
+  height: 100%;
+  background-color: var(--strong-color);
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  outline: none;
+  caret-color: transparent;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+#setUp {
+  position: absolute;
+  right: calc(12.5% - 32px);
+  bottom: 25%;
+  transform: translate(50%, 25%);
+  font-size: 50px;
+  color: var(--strong-color);
+  font-weight: 600;
+}
